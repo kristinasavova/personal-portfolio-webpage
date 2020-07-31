@@ -1,6 +1,9 @@
 
 /*----- Base Rules -----*/
 
+* {
+    box-sizing: border-box;
+}
 html {
     font-size: 17px;
 }
@@ -9,6 +12,8 @@ body {
     font-size: 1em;
     line-height: 140%;
     text-align: justify;
+    background: #414754;
+    color: #E3E8F0;
 }
 h1, h2, h3 {
     font-family: 'Halant', serif;
@@ -16,16 +21,13 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 1.215em;
+    margin: .5em auto;
 }
 h2 {
     font-size: 1.138em;
 }
 h3 {
     font-size: 1.067em;
-}
-img {
-    max-width: 100%;
-    height: auto;
 }
 ul {
     list-style: none;
@@ -46,20 +48,22 @@ header {
     left: 0;
     width: 100%;
     height: 3em;
-    background: grey;
+    background: #E3E8F0;
+    color: #414754; 
 }
 footer {
     width: 100%;
-    height: 10vh;
-    min-height: 3em;
-    background: grey;
+    height: 2em;
+    background: #E3E8F0;
+    color: #414754;
 }
 section {
     width: 95%;
     margin: auto;
+    padding-bottom: 2em;
 }
     section:first-of-type {
-        margin-top: 3.5em;
+        margin-top: 4.5em;
     }
 
 /*----- Module Rules -----*/
@@ -81,8 +85,18 @@ section {
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
 }
+    .navlink-container a {
+        border: solid 2px rgba(65, 71, 84, .1);
+        height: 100%;
+        flex: 1 1 auto;
+        text-align: center;
+        padding-top: .8em;
+        font-size: 16px;
+        color: #82807F;
+        transition: background-color .5s ease-in-out, 
+                    color .5s ease-in-out;
+    }
 .skills-container {
     display: flex;
     flex-direction: column;
@@ -112,8 +126,25 @@ section {
             background: url("../photos/linkedin-logo.png") no-repeat center;
             background-color: rgba(100, 100, 200, .3);
         }
+.photo-container {
+    width: 100%;
+    height: 800px;
+    background: radial-gradient(circle, 
+        rgba(65, 71, 84, 0), 
+        rgba(65, 71, 84, .25),
+        rgba(65, 71, 84, .5),
+        rgba(65, 71, 84, .75),
+        rgb(65, 71, 84)),
+        url("../photos/portrait.png") no-repeat center;
+    background-size: cover;
+}
 
 /*----- State Rules -----*/
+
+.navlink-container a:hover {
+    background: rgba(65, 71, 84, .2);
+    color: #414754;
+}
 
 /*----- Theme Rules -----*/
 
