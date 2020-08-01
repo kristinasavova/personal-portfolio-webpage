@@ -35,7 +35,7 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
-    font-size: .9em;
+    font-size: 16px;
 }
 
 /*----- Layout Rules -----*/
@@ -58,12 +58,12 @@ section {
     width: 95%;
     margin: auto;
 }
-    section:first-of-type {
-        margin-top: 5em;
-    }
 
 /*----- Module Rules -----*/
 
+.section-about {
+    margin-top: 5em;
+}
 .video-wrapper {
     position: relative;
     overflow: hidden;
@@ -111,18 +111,19 @@ section {
 }
     .contact-info-item p {
         text-align: center;
-        margin: .7em auto .3em auto;
+        margin: 12px auto 8px auto;
         color: #3EA8DE;
+        font-size: 17px;
     }
     .contact-info-link {
         border-bottom: solid .5px #6464C8;
         transition: color .5s ease-in-out;
-        padding-bottom: .2em;
+        padding-bottom: 3px;
     }
     .logo {
         border-radius: 50%;
-        width: 5.5em;
-        height: 5.5em;
+        width: 100px;
+        height: 100px;
         margin: auto;
         transition: background-color .5s ease-in-out;
     }
@@ -133,18 +134,18 @@ section {
         .logo-linkedin {
             background: url("../photos/linkedin-logo.png") no-repeat center;
             background-color: rgba(100, 100, 200, .3);
-            margin-top: 1.5em;
+            margin-top: 25px;
         }
 .photo-container {
     width: 100%;
-    height: 500px;
+    height: 400px;
     background: radial-gradient(circle, 
         rgba(65, 71, 84, 0), 
         rgba(65, 71, 84, .25),
         rgba(65, 71, 84, .5),
         rgba(65, 71, 84, .75),
         rgb(65, 71, 84)),
-        url("../photos/portrait-small.png") no-repeat center;
+        url("../photos/portrait-small.png") no-repeat center center;
     background-size: cover;
     box-shadow: 0 0 10px 5px #414754 inset;
 }
@@ -166,6 +167,49 @@ section {
 
 /*----- Media Queries -----*/
 
-@media only screen and (min-width: 568px) and (orientation: landscape) {
-    
+@media only screen and (min-width: 320px) {
+    html { 
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680)); 
+    }
+}
+
+@media only screen and (min-width: 500px),
+    only screen and (min-width: 320px) and (orientation: landscape) {
+    .photo-container {
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width: 570px),
+    only screen and (min-width: 375px) and (orientation: landscape) {
+    .photo-container {
+        height: 650px;
+    }
+    .contact-info-container {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+        .contact-info-item {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+        .logo {
+            margin-top: 0;
+        }
 }  
+
+@media only screen and (min-width: 768px),
+    only screen and (min-width: 700px) and (orientation: landscape) {
+        .section-about {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+            .text-container {
+                flex: 1 1 50%;
+                padding: 1em;
+            }
+            .photo-container {
+                flex: 1 1 50%;
+            }
+}
