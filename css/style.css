@@ -21,13 +21,11 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 1.215em;
-    margin: .5em auto;
+    margin-bottom: -.25em;
 }
 h2 {
     font-size: 1.138em;
-}
-h3 {
-    font-size: 1.067em;
+    margin: 2.2em auto .75em auto;
 }
 ul {
     list-style: none;
@@ -37,6 +35,7 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
+    font-size: .9em;
 }
 
 /*----- Layout Rules -----*/
@@ -48,22 +47,19 @@ header {
     left: 0;
     width: 100%;
     height: 3em;
-    background: #E3E8F0;
-    color: #414754; 
+    background-image: linear-gradient(to bottom right, #414754, #6464C8);
 }
 footer {
     width: 100%;
     height: 2em;
-    background: #E3E8F0;
-    color: #414754;
+    background-image: linear-gradient(to bottom, #414754, #6464C8);
 }
 section {
     width: 95%;
     margin: auto;
-    padding-bottom: 2em;
 }
     section:first-of-type {
-        margin-top: 4.5em;
+        margin-top: 5em;
     }
 
 /*----- Module Rules -----*/
@@ -72,7 +68,9 @@ section {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%;  /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    border-top: 15px solid rgba(100, 100, 200, .3); 
+    border-bottom: 15px solid rgba(100, 100, 200, .3);
 }
     .video-wrapper iframe {
         position: absolute;
@@ -87,14 +85,13 @@ section {
     justify-content: space-evenly;
 }
     .navlink-container a {
-        border: solid 2px rgba(65, 71, 84, .1);
+        border: solid 3px #414754;
         height: 100%;
-        flex: 1 1 auto;
+        flex: 1 1 100px;
         text-align: center;
-        padding-top: .8em;
-        font-size: 16px;
-        color: #82807F;
-        transition: background-color .5s ease-in-out, 
+        padding-top: .65em;
+        color: #E3E8F0;
+        transition: background-color .5s ease-in-out,
                     color .5s ease-in-out;
     }
 .skills-container {
@@ -107,16 +104,27 @@ section {
     font-size: .9em;
 }
 .contact-info-container {
+    padding: .5em 0 1.5em 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
 }
+    .contact-info-item p {
+        text-align: center;
+        margin: .7em auto .3em auto;
+        color: #3EA8DE;
+    }
+    .contact-info-link {
+        border-bottom: solid .5px #6464C8;
+        transition: color .5s ease-in-out;
+        padding-bottom: .2em;
+    }
     .logo {
         border-radius: 50%;
         width: 5.5em;
         height: 5.5em;
         margin: auto;
+        transition: background-color .5s ease-in-out;
     }
         .logo-email {
             background: url("../photos/email-icon.png") no-repeat center;
@@ -125,27 +133,39 @@ section {
         .logo-linkedin {
             background: url("../photos/linkedin-logo.png") no-repeat center;
             background-color: rgba(100, 100, 200, .3);
+            margin-top: 1.5em;
         }
 .photo-container {
     width: 100%;
-    height: 800px;
+    height: 500px;
     background: radial-gradient(circle, 
         rgba(65, 71, 84, 0), 
         rgba(65, 71, 84, .25),
         rgba(65, 71, 84, .5),
         rgba(65, 71, 84, .75),
         rgb(65, 71, 84)),
-        url("../photos/portrait.png") no-repeat center;
+        url("../photos/portrait-small.png") no-repeat center;
     background-size: cover;
+    box-shadow: 0 0 10px 5px #414754 inset;
 }
 
 /*----- State Rules -----*/
 
 .navlink-container a:hover {
-    background: rgba(65, 71, 84, .2);
-    color: #414754;
+    background-color: rgba(100, 100, 200, .75);
+    color: #E3E8F0;
+}
+.logo:hover {
+    background-color: rgba(100, 100, 200, .75);
+}
+.contact-info-link:hover {
+    color: #FFFFFF;
 }
 
 /*----- Theme Rules -----*/
 
 /*----- Media Queries -----*/
+
+@media only screen and (min-width: 568px) and (orientation: landscape) {
+    
+}  
