@@ -47,12 +47,12 @@ header {
     left: 0;
     width: 100%;
     height: 3em;
-    background-image: linear-gradient(to bottom right, #414754, #6464C8);
+    background-image: linear-gradient(to bottom right, #414754, #8C92AC);
 }
 footer {
     width: 100%;
     height: 2em;
-    background-image: linear-gradient(to bottom, #414754, #6464C8);
+    background-image: linear-gradient(to bottom, #414754, #8C92AC);
 }
 section {
     width: 95%;
@@ -69,8 +69,8 @@ section {
     overflow: hidden;
     width: 100%;
     padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
-    border-top: 15px solid rgba(100, 100, 200, .3); 
-    border-bottom: 15px solid rgba(100, 100, 200, .3);
+    border-top: 20px solid rgba(140, 146, 172, .3); 
+    border-bottom: 20px solid rgba(140, 146, 172, .3);
 }
     .video-wrapper iframe {
         position: absolute;
@@ -89,7 +89,7 @@ section {
         height: 100%;
         flex: 1 1 100px;
         text-align: center;
-        padding-top: .65em;
+        padding-top: .8em;
         color: #E3E8F0;
         transition: background-color .5s ease-in-out,
                     color .5s ease-in-out;
@@ -109,14 +109,16 @@ section {
     flex-direction: column;
     align-items: center;
 }
-    .contact-info-item p {
+    .contact-info-item {
         text-align: center;
+    }
+    .contact-info-item p {
         margin: 12px auto 8px auto;
-        color: #3EA8DE;
+        color: #A7ABBF;
         font-size: 17px;
     }
     .contact-info-link {
-        border-bottom: solid .5px #6464C8;
+        border-bottom: solid .5px #171717;
         transition: color .5s ease-in-out;
         padding-bottom: 3px;
     }
@@ -125,15 +127,16 @@ section {
         width: 100px;
         height: 100px;
         margin: auto;
-        transition: background-color .5s ease-in-out;
+        border: solid 2px #171717;
+        transition: transform .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
         .logo-email {
-            background: url("../photos/email-icon.png") no-repeat center;
-            background-color: rgba(100, 100, 200, .3);
+            background: url("../photos/email-icon.png") no-repeat center, 
+                        linear-gradient(to bottom right, #414754, #717999);
         }
         .logo-linkedin {
-            background: url("../photos/linkedin-logo.png") no-repeat center;
-            background-color: rgba(100, 100, 200, .3);
+            background: url("../photos/linkedin-logo.png") no-repeat center,
+                        linear-gradient(to bottom right, #414754, #717999);
             margin-top: 25px;
         }
 .photo-container {
@@ -153,11 +156,11 @@ section {
 /*----- State Rules -----*/
 
 .navlink-container a:hover {
-    background-color: rgba(100, 100, 200, .75);
+    background-color: rgba(140, 146, 172, .75);
     color: #E3E8F0;
 }
 .logo:hover {
-    background-color: rgba(100, 100, 200, .75);
+    transform: translateY(-10px);  
 }
 .contact-info-link:hover {
     color: #FFFFFF;
@@ -169,7 +172,7 @@ section {
 
 @media only screen and (min-width: 320px) {
     html { 
-        font-size: calc(16px + 6 * ((100vw - 320px) / 680)); 
+        font-size: calc(17px + 4 * ((100vw - 320px) / 680)); 
     }
 }
 
@@ -203,13 +206,22 @@ section {
         .section-about {
             display: flex;
             flex-direction: row;
-            height: 100vh;
+            flex-wrap: nowrap;
         }
             .text-container {
-                flex: 1 1 50%;
-                padding: 1em;
+                flex: 1 1 40%;
+                padding: 3.2em 1.5em 0 1.5em;
             }
             .photo-container {
-                flex: 1 1 50%;
+                flex: 1 1 40%;
             }
+}
+
+@media only screen and (min-width: 950px) {
+    .section-about {
+        height: 88vh;
+    }
+        .text-container {
+            padding: 3em 2em 0 2em;
+        }
 }
