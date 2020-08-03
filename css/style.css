@@ -15,17 +15,15 @@ body {
     background: #414754;
     color: #E3E8F0;
 }
-h1, h2, h3 {
+h1, h2 {
     font-family: 'Halant', serif;
     text-align: center;
 }
 h1 {
     font-size: 1.215em;
-    margin-bottom: -.25em;
 }
 h2 {
     font-size: 1.138em;
-    margin: 1.25em auto .75em auto;
 }
 ul {
     list-style: none;
@@ -34,6 +32,7 @@ ul {
 }
 li {
     text-align: center;
+    padding-bottom: .25em;
 }
 a {
     text-decoration: none;
@@ -63,18 +62,20 @@ footer {
 }
 section {
     width: 95%;
+    max-width: 1500px;
     margin: auto;
 }
 
 /*----- Module Rules -----*/
 
 .section-about {
-    margin-top: 5em;
+    margin: 5em auto 1em auto;
 }
 .video-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
+    max-width: 1100px;
     padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
 }
     .video-wrapper iframe {
@@ -88,6 +89,8 @@ section {
     height: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    max-width: 1700px;
 }
     .navlink-container a {
         border: solid 3px #414754;
@@ -107,10 +110,10 @@ section {
     font-family: 'Lexend Zetta', sans-serif;
     line-height: 150%;
     font-size: .9em;
-    padding-bottom: .5em;
+    padding-bottom: 1em;
 }
 .contact-info-container {
-    padding: .5em 0 1.5em 0;
+    padding: 0 0 1.5em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -233,15 +236,12 @@ section {
 }
 
 @media only screen and (min-width: 950px) {
-    .section-about {
-        height: 100vh;
+    .text-container {
+        padding: 3em 2em 0 2em;
     }
-        .text-container {
-            padding: 3em 2em 0 2em;
-        }
     .video-wrapper {
         width: 90%;
-        margin: 0 auto;
+        margin: auto;
     }
     .skills-container {
         flex-direction: row;
@@ -250,5 +250,46 @@ section {
     }
         .skills-group {
             flex: 0 0 50%;
+        }
+}
+
+@media only screen and (min-width: 1025px) {
+    html {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 1.56em;
+        line-height: 110%;
+        margin-bottom: 1.1em;
+    }
+    h2 {
+        font-size: 1.3em;
+        margin-bottom: 1.25em;
+    }
+    .section-about {
+        height: 100vh;
+    }
+        .text-container {
+            padding: 10vh 5vw 0 5vw;
+        }
+    .navlink-container {
+        justify-content: flex-end;
+        align-items: center;
+    }
+        .navlink-container a {
+            flex: 0 0 auto; 
+            height: auto;
+            border: none;
+            border-bottom: solid .5px #171717;
+            margin-right: 3.5em;
+            padding: 0;
+            transition: color .5s ease-in-out;
+        }
+            .navlink-container a:hover {
+                color: #FFFFFF;
+                background-color: inherit;
+            } 
+        .skills-group {
+            flex: 1 1 auto;
         }
 }
