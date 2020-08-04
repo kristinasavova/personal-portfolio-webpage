@@ -188,8 +188,6 @@ section {
     color: #FFFFFF;
 }
 
-/*----- Theme Rules -----*/
-
 /*----- Media Queries -----*/
 
 @media only screen and (min-width: 320px) {
@@ -277,6 +275,9 @@ section {
     h2 {
         font-size: 1.2em;
         margin-bottom: 1.25em;
+    }
+    a {
+        font-size: 18px;
     }
     .text-container {
         padding: 10% 5%;
