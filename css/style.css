@@ -127,7 +127,7 @@ section {
     align-items: center;
 }
     .contact-info-item p {
-        margin: 12px auto 8px auto;
+        margin: 8px auto;
         color: #A7ABBF;
         font-size: 17px;
     }
@@ -138,19 +138,15 @@ section {
     }
     .logo {
         border-radius: 50%;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
+        padding: 20px 0;
         margin: auto;
         border: solid 2px #171717;
+        background: linear-gradient(to bottom right, #414754, #717999);
         transition: transform .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-        .logo-email {
-            background: url("../photos/email-icon.png") no-repeat center, 
-                        linear-gradient(to bottom right, #414754, #717999);
-        }
-        .logo-linkedin {
-            background: url("../photos/linkedin-logo.png") no-repeat center,
-                        linear-gradient(to bottom right, #414754, #717999);
+        .logo:last-of-type {
             margin-top: 25px;
         }
 .photo-container {
@@ -208,7 +204,7 @@ section {
         height: 650px;
     }
     .contact-info-container {
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: center;
     }
         .contact-info-item {
