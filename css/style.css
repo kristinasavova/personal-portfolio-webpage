@@ -163,12 +163,9 @@ section {
     background-size: cover;
 }
 .nav-arrow {
-    width: 90px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     margin: 1.75em auto 0 auto;
-    background: linear-gradient(rgba(65, 71, 84, .75), rgba(65, 71, 84, .8)),
-                url("../photos/down-arrow.png") no-repeat center;
-    background-size: contain;
 }
 
 /*----- State Rules -----*/
