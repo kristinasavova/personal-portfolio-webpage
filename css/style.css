@@ -164,7 +164,6 @@ section {
         rgb(65, 71, 84)),
         url("../photos/portrait-small.png") no-repeat center center;
     background-size: cover;
-    box-shadow: 0 0 10px 5px #414754 inset;
 }
 .nav-arrow {
     width: 90px;
@@ -278,6 +277,9 @@ section {
     }
     a {
         font-size: 18px;
+    }
+    .photo-container {
+        box-shadow: 0 0 10px 5px #414754 inset;
     }
     .text-container {
         padding: 10% 5%;
